@@ -4,10 +4,17 @@ services:
     container_name: mysql
     image: mysql
     environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+
   order-service:
-    build: .
+    build: ./order-service/
     container_name: order-service
     ports:
       - "8080:8080"
-    depends_on: mysqldb
+    depends_on:
+      - mysqldb
