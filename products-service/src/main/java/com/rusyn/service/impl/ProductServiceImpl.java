@@ -23,15 +23,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getProductById(String id) {
-        return productRepository.findById(id)
+    public ProductDto getProductById(String id) {
+        Product product = productRepository.findById(id)
                 .orElseThrow(() -> new ProductNotFoundException("Product not found!"));
-    }
-
-    @Override
-    public Product getProductByName(String name) {
-        return productRepository.findProductByName(name)
-                .orElseThrow(() -> new ProductNotFoundException("Product with this name: " + name + " does not exist"));
+        return mapToDto(product);
     }
 
     @Override
@@ -40,7 +35,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product createProduct(ProductDto productDto) {
+    public ProductDto createProduct(ProductDto productDto) {
         Category category = categoryRepository.findByName(productDto.getCategoryName())
                 .orElseThrow(() -> new CategoryNotFoundException("Category not found"));
 
@@ -51,11 +46,14 @@ public class ProductServiceImpl implements ProductService {
         product.setCategory(category);
         product.setQuantity(productDto.getQuantity());
         product.setImageUrl(productDto.getImageUrl());
-        return productRepository.save(product);
+
+        productRepository.save(product);
+
+        return mapToDto(product);
     }
 
     @Override
-    public Product updateProduct(ProductDto productDto, String productId) {
+    public ProductDto updateProduct(ProductDto productDto, String productId) {
         Product toBeUpdated = productRepository.findById(productId)
                 .orElseThrow(() -> new ProductNotFoundException("Product not found!"));
 
@@ -71,7 +69,7 @@ public class ProductServiceImpl implements ProductService {
 
         productRepository.save(toBeUpdated);
 
-        return toBeUpdated;
+        return mapToDto(toBeUpdated);
     }
 
     @Override
@@ -79,4 +77,13 @@ public class ProductServiceImpl implements ProductService {
         productRepository.deleteById(productId);
     }
 
+    private ProductDto mapToDto(Product product) {
+        return ProductDto.builder()
+                .name(product.getName())
+                .categoryName(product.getCategory().getName())
+                .description(product.getDescription())
+                .cost(product.getCost())
+                .quantity(product.getQuantity())
+                .imageUrl(product.getImageUrl()).build();
+    }
 }

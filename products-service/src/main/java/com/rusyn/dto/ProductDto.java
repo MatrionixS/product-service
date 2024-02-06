@@ -19,7 +19,6 @@ public class ProductDto {
     @Size(min = 2, max = 50, message = "Product should have from 2 to 50 characters")
     private String name;
 
-    @NotEmpty
     private String categoryName;
 
     @NotEmpty

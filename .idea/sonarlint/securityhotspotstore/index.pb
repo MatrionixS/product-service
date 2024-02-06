@@ -32,8 +32,6 @@ l
 <products-service/src/main/java/com/rusyn/dto/ProductDto.java,6\f\6f3d328e27d8a33b08103ee088cc42d53b9dee86
 }
 Mproducts-service/src/main/java/com/rusyn/service/impl/ProductServiceImpl.java,d\a\da419bc9004d562bc036fe425452878d22ea9c42
-g
-7products-service/src/main/java/com/rusyn/exception.java,a\e\ae82756521828cfe6549903a0af64153480a0261
 €
 Pproducts-service/src/main/java/com/rusyn/exception/ProductNotFoundException.java,4\3\4337b45a146656af1c3e974e64bc73d5f853f373
 H
@@ -52,3 +50,5 @@ m
 Qproducts-service/src/main/java/com/rusyn/exception/CategoryNotFoundException.java,7\c\7c21f25247e74db5015f4d8131f5518cd2b5f7cd
 K
 products-service/Dockerfile,d\a\daeba39290e5ac459b490e8120fd19b712d36a57
+o
+?products-service/src/main/java/com/rusyn/dto/UpdateProduct.java,4\9\49c3532ddfa40fd0c64ece029a4ec2fd8f21720a

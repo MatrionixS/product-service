@@ -16,9 +16,13 @@ public class CategoryServiceImpl implements CategoryService {
         this.categoryRepository = categoryRepository;
     }
     @Override
-    public Category createCategory(CategoryDto categoryDto) {
+    public CategoryDto createCategory(CategoryDto categoryDto) {
         Category category = new Category();
         category.setName(categoryDto.getName());
-        return categoryRepository.save(category);
+        categoryRepository.save(category);
+
+        return CategoryDto.builder()
+                .name(category.getName()).build();
     }
+
 }

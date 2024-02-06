@@ -4,5 +4,5 @@ import com.rusyn.dto.CategoryDto;
 import com.rusyn.entity.Category;
 
 public interface CategoryService {
-    Category createCategory(CategoryDto categoryDto);
+    CategoryDto createCategory(CategoryDto categoryDto);
 }

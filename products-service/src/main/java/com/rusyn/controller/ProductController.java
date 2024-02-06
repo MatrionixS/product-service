@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/products")
 public class ProductController {
     private ProductService productService;
 
@@ -19,27 +19,27 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/product")
+    @GetMapping
     public ResponseEntity<List<Product>> getProducts() {
         return ResponseEntity.ok(productService.getProducts());
     }
 
-    @GetMapping("/product/")
-    public ResponseEntity<Product> getProductById(@RequestParam("id") String id) {
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductDto> getProductById(@PathVariable("id") String id) {
         return ResponseEntity.ok(productService.getProductById(id));
     }
-    @PostMapping("/product")
-    public ResponseEntity<Product> createProduct(@Valid @RequestBody ProductDto productDto) {
+    @PostMapping
+    public ResponseEntity<ProductDto> createProduct(@Valid @RequestBody ProductDto productDto) {
         return new ResponseEntity<>(productService.createProduct(productDto), HttpStatus.CREATED);
     }
 
-    @PutMapping("/product")
-    public ResponseEntity<Product> updateProduct(@Valid @RequestBody ProductDto productDto, @RequestParam("id") String id) {
+    @PutMapping
+    public ResponseEntity<ProductDto> updateProduct(@Valid @RequestBody ProductDto productDto, @RequestParam("id") String id) {
         return new ResponseEntity<>(productService.updateProduct(productDto, id), HttpStatus.OK);
     }
 
-    @DeleteMapping("/product")
-    public ResponseEntity<String> deleteProduct(@RequestParam("id") String id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable("id") String id) {
         productService.deleteProduct(id);
         return ResponseEntity.ok("Product with id:" + id + " was deleted successfully!");
     }
