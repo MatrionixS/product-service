@@ -52,3 +52,9 @@ K
 products-service/Dockerfile,d\a\daeba39290e5ac459b490e8120fd19b712d36a57
 o
 ?products-service/src/main/java/com/rusyn/dto/UpdateProduct.java,4\9\49c3532ddfa40fd0c64ece029a4ec2fd8f21720a
+~
+Nproducts-service/src/main/java/com/rusyn/exception/GlobalExceptionHandler.java,0\f\0fc5015b6f2dacc38a53bbbeb396d5bece61619a
+j
+:products-service/src/main/java/com/rusyn/dto/ErrorDto.java,8\e\8e214b7248b11f9d801c278dba38fffb923a6f57
+…
+Uproducts-service/src/main/java/com/rusyn/exception/ProductAlreadyExistsException.java,4\e\4e8ba55b600a061ba7ba71f28be7874a505bbd9a

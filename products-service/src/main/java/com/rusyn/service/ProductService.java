@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProductService {
+    boolean productExists(String name);
     ProductDto getProductById(String id);
     List<Product> getProducts();
     ProductDto createProduct(ProductDto productDto);
