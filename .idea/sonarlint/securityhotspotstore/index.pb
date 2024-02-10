@@ -50,8 +50,6 @@ m
 Qproducts-service/src/main/java/com/rusyn/exception/CategoryNotFoundException.java,7\c\7c21f25247e74db5015f4d8131f5518cd2b5f7cd
 K
 products-service/Dockerfile,d\a\daeba39290e5ac459b490e8120fd19b712d36a57
-o
-?products-service/src/main/java/com/rusyn/dto/UpdateProduct.java,4\9\49c3532ddfa40fd0c64ece029a4ec2fd8f21720a
 ~
 Nproducts-service/src/main/java/com/rusyn/exception/GlobalExceptionHandler.java,0\f\0fc5015b6f2dacc38a53bbbeb396d5bece61619a
 j
